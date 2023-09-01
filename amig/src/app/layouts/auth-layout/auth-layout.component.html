@@ -1,0 +1,76 @@
+<div class="main-content">
+  <nav class="navbar navbar-top navbar-horizontal navbar-expand-md navbar-dark">
+    <div class="container px-4">
+      <a class="navbar-brand" routerLinkActive="active" [routerLink]="['/dashboard']">
+        <img src="assets/img/brand/red.png" />
+      </a>
+      <button class="navbar-toggler" type="button" (click)="isCollapsed=!isCollapsed"
+         aria-controls="sidenav-collapse-main">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse"  [ngbCollapse]="isCollapsed" id="sidenav-collapse-main">
+        <!-- Collapse header -->
+        <div class="navbar-collapse-header d-md-none">
+          <div class="row">
+            <div class="col-6 collapse-brand">
+              <a routerLinkActive="active" [routerLink]="['/dashboard']">
+                <img src="assets/img/brand/red.png">
+              </a>
+            </div>
+            <div class="col-6 collapse-close">
+              <button type="button" class="navbar-toggler" (click)="isCollapsed=!isCollapsed" >
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Navbar items -->
+        <ul class="navbar-nav ml-auto">
+         
+          <li class="nav-item">
+            <a class="nav-link nav-link-icon" routerLinkActive="active" [routerLink]="['/register']">
+              <i class="ni ni-circle-08"></i>
+              <span class="nav-link-inner--text">Register</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-icon" routerLinkActive="active" [routerLink]="['/login']">
+              <i class="ni ni-key-25"></i>
+              <span class="nav-link-inner--text">Login</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
+<footer class="py-5">
+  <div class="container">
+    <div class="row align-items-center justify-content-xl-between">
+      <div class="col-xl-6">
+        <div class="copyright text-center text-xl-left text-muted">
+          &copy; {{ test | date: "yyyy" }} <a href="https://www.amigo.tn/" class="font-weight-bold ml-1" target="_blank">Creative Tim</a>
+        </div>
+      </div>
+      <div class="col-xl-6">
+        <ul class="nav nav-footer justify-content-center justify-content-xl-end">
+          <li class="nav-item">
+            <a href="https://www.amigo.tn/" class="nav-link" target="_blank">Creative Tim</a>
+          </li>
+          <li class="fa fa-facebook">
+            <a href="https://www.facebook.com/TunisieAmigo/?show_switched_toast=0&show_invite_to_follow=0&show_switched_tooltip=0&show_podcast_settings=0&show_community_review_changes=0&show_community_rollback=0&show_follower_visibility_disclosure=0" class="nav-link" target="_blank" class="nav-link" target="_blank">Facebook</a>
+          </li>
+          <li class="fa fa-instagram">
+            <a href="https://www.instagram.com/amigo.tunisie/?igshid=YmMyMTA2M2Y%3D&fbclid=IwAR048DGPP1BqHS6GX6bQIZ31U32ODIjIGIJDOtrqztkDpr77XKcJVNkorZs" class="nav-link" target="_blank">Instagram</a>
+          </li>
+          <li class="fa fa-twitter">
+            <a href="https://twitter.com" class="nav-link" target="_blank">Twitter</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

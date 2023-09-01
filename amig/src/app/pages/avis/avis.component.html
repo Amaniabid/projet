@@ -1,0 +1,54 @@
+<div style="min-height: 600px; background-image: url(assets/img/theme/taxi.png); background-size: cover; background-position: center top;">
+  <!-- Mask -->
+  <span class="mask bg-gradient-gray-7"></span>
+  <!-- Header container -->
+  <div class="container-fluid d-flex align-items-center">
+    <div class="row">
+      <i class="fa-solid fa-user"></i>
+      
+    </div>
+  </div>
+
+</div>  
+
+
+
+
+
+
+<div class="container-fluid mt--7">
+
+ <main class="col-md-8 mx-auto">
+  <div class="container-fluid">
+    <div class="card card-user">
+
+      <div class="card-body">
+        <div >
+          <h2 class="card-title text-primary mb-4">{{titlePage}}</h2>
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="auteur">Titre : </label>
+                <input type="text" class="form-control" id="auteur" name="auteur" [(ngModel)]="auteur">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="publicationAEcrire">Publication:</label>
+                <input type="text" class="form-control" id="publicationAEcrire" name="publicationAEcrire" [(ngModel)]="publicationAEcrire">
+              </div>
+            </div>
+
+            <button (click)="ajouterPublication()" class="btn btn-primary">
+              <i class="fas fa-plus"></i> {{titleButton}}
+            </button>
+            <button type="button" (click)="returnAvis()" class="btn btn-primary btn-round">retour a la liste du avis</button>
+          </form>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+ </main>
+</div>

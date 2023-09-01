@@ -1,0 +1,52 @@
+<div style="min-height: 600px; background-image: url(assets/img/theme/taxi.png); background-size: cover; background-position: center top;">
+  <!-- Mask -->
+  <span class="bg-gradient-gray-7"></span>
+   <!-- Header container -->
+  <div class="container-fluid d-flex align-items-center">
+    <div class="row">
+       <i class="fa-solid fa-user"></i>
+     </div>
+  </div>
+</div>
+
+
+
+<div class="container-fluid mt--7">
+  <main>
+    <section class="post" *ngFor="let post of posts">
+      <header>
+        <h2>{{post.user?.firstname}} {{post.user?.lastname}}</h2>
+      </header>
+      <p>{{post.contenu}}</p>
+      <footer>
+        <button (click)="likePost(post.id)" [style]="style"> <span style="margin-right: 5px;">{{ post.likes }}  </span> <i class="fa fa-thumbs-up"></i> J'aime</button>
+        
+        <button (click)=" Comment()"><i class="fa fa-comment" ></i> Commenter</button>
+      </footer>
+      <!-- Comment section -->
+    <div *ngIf="showCommentSection">
+      <div class="comment-section">
+        <div class="comment" *ngFor="let comment of post.commentaires">
+          <h3>{{ comment.user?.firstname }} {{ comment.user?.lastname }}</h3>
+          <p class="commentText">{{ comment.content }}</p>
+        </div>
+        <!-- Add more comments here -->
+      </div>
+    
+      <div class="add-comment">
+        <form (submit)="addComment(post.id)">
+          <textarea [(ngModel)]="newComment.content" placeholder="votre commentaire" style="width: 100%;"></textarea>
+          <button type="submit" class="btn-Update">Ajouter un commentaire</button>
+        </form>
+      </div>
+    </div>
+    </section>
+  </main>
+</div>
+
+
+
+<footer>
+<p>© Ma plateforme 2023</p>
+</footer>
+

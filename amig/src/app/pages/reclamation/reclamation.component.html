@@ -1,0 +1,48 @@
+<div style="min-height: 600px; background-image: url(assets/img/theme/taxi.png); background-size: cover; background-position: center top;">
+  <!-- Mask -->
+  <span class="mask bg-gradient-gray-7"></span>
+  <!-- Header container -->
+  <div class="container-fluid d-flex align-items-center">
+    <div class="row">
+      <i class="fa-solid fa-user"></i>
+      
+    </div>
+  </div>
+</div>  
+
+
+<div class="container-fluid mt--7">
+  <div class="col-md-8 mx-auto">
+    <div class="card card-user">
+            <div class="card-header">
+             <h2 class="card-title">{{titlePage}}</h2>
+            </div>
+
+        <div class="card-body">
+                   <div class="row">
+                    <div class="col-md-5 pr-1">
+                      <div class="form-group">
+                       <label>Title:</label>
+                       <input type="text" [(ngModel)]="title">
+                      </div>
+                    </div>
+                  </div>
+                   <br>
+                   <div class="row">
+                    <div class="col-md-5 pr-1">
+                      <div class="form-group">
+                         <label>réclamation:</label>
+                         <input type="text" [(ngModel)]="reclamationAEcrire">
+                        </div>
+                      </div>
+                    </div> 
+                    <button (click)="ajouterreclamation()"class="btn btn-primary btn-round">{{titleButton}}</button>
+                    <button type="button" (click)="returnRecl()" class="btn btn-primary btn-round">retour a la liste du réclamation</button>
+        </div>
+
+    </div>  
+  </div>
+</div>                 
+
+
+    

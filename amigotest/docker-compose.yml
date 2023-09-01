@@ -1,0 +1,32 @@
+version: '3'
+services:
+  mongodb:
+    container_name: mongodb
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: username
+      MONGO_INITDB_ROOT_PASSWORD: password
+    volumes:
+      - mongodb:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - mongodb
+    restart: unless-stopped
+
+  mongodb-compass:
+    container_name: mongodb-compass
+    image: mongo
+    command: mongod --bind_ip_all
+    ports:
+      - "27017:27017"
+    networks:
+      - mongodb
+    restart: unless-stopped
+
+networks:
+  mongodb:
+    driver: bridge
+
+volumes:
+  mongodb:

@@ -1,0 +1,91 @@
+<div style="min-height: 600px; background-image: url(assets/img/theme/taxi.png); background-size: cover; background-position: center top;">
+  <!-- Mask -->
+  <span class="mask bg-gradient-gray-7"></span>
+  <!-- Header container -->
+  <div class="container-fluid d-flex align-items-center">
+    <div class="row">
+      <i class="fa-solid fa-user"></i>
+      
+    </div>
+  </div>
+</div>
+
+<div class="back">
+      <div class="container-fluid mt--7">
+
+  <div class="col-md-8 mx-auto">
+   <div class="card card-user">
+      <div class="card-header">
+      <h2 class="card-title">{{titlePage}}</h2>
+      </div>
+     <div class="card-body">
+     <form>
+      <div class="row">
+        <div class="col-md-5 pr-1">
+            <div class="form-group">
+              <label>titre :</label>
+              <input type="text" [(ngModel)]="eventtitre" name="eventtitre">
+            </div>  
+        </div>      
+      </div>   
+          <div class="row">
+           <div class="col-md-5 pr-1">
+              <div class="form-group">
+                <label>start date :</label>
+                <input type="date" [(ngModel)]="eventDate" name="eventDate">
+              </div>
+            </div>  
+            <div class="col-md-5 pr-1">
+              <div class="form-group">
+                <label>end date :</label>
+                <input type="date" [(ngModel)]="eventDatefin" name="eventDatefin">
+              </div>
+            </div>  
+          </div> 
+          <div class="row">
+            <div class="col-md-5 pr-1">
+                <div class="form-group">
+                  <label>description :</label>
+                  <input type="text" [(ngModel)]="eventdescription" name="eventdescription">
+                </div>  
+            </div>      
+          </div>   
+          <div class="row">
+            <div class="col-md-5 pr-1">
+                <div class="form-group">
+                  <label>Lieu :</label>
+                  <input type="text" [(ngModel)]="eventLocation" name="eventLocation">
+                </div>  
+            </div>      
+          </div>
+        <button type="submit" (click)="createEvent()" class="btn btn-primary btn-round">{{titleButton}}</button>
+        <button type="button" (click)="returnEvent()" class="btn btn-primary btn-round">retour a la liste du événement</button>
+
+     </form>
+
+     <div *ngIf="eventCreated">
+       <h3>Événement créé avec succès !</h3>
+       <p>titre : {{eventtitre}}</p>
+       <p>startDate: {{eventstartdate}}</p>
+
+       <p>endDate: {{eventenddate}}</p>
+       <p>description : {{eventdescription}}</p>
+       <p>Lieu : {{eventLocation}}</p>
+      </div> 
+      <div>
+               
+                  <div *ngIf="modeEdition">
+                       <h2>Modifier événment</h2>
+                       <p>titre : {{eventtitre}}</p>
+                       <p>startDate: {{eventstartdate}}</p>
+                       <p>endDate: {{eventenddate}}</p>
+                        <p>description : {{eventdescription}}</p>
+                         <p>Lieu : {{eventLocation}}</p>
+                </div>
+    </div>
+  </div>
+
+</div>
+
+
+

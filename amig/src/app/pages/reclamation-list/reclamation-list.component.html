@@ -1,0 +1,72 @@
+<div style="min-height: 600px; background-image: url(assets/img/theme/taxi.png); background-size: cover; background-position: center top;">
+    <!-- Mask -->
+    <span class="mask bg-gradient-gray-7"></span>
+    <!-- Header container -->
+    <div class="container-fluid d-flex align-items-center">
+      <div class="row">
+        <i class="fa-solid fa-user"></i>
+      </div>
+    </div>
+  </div>
+  
+  <div class="back">
+    <div class="container-fluid mt--7">
+      <div>
+        <div class="card card-user">
+          <div class="card-header">
+            <h2 class="card-title">Gérer un Reclamation</h2>
+            <button class="btn-Add"  (click)="addreclamation()">Ajouter un Reclamation</button>
+          </div>
+          <div class="card-body">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+              <!-- Columns -->
+              <ng-container matColumnDef="title">
+                <th mat-header-cell *matHeaderCellDef> title </th>
+                <td mat-cell *matCellDef="let reclamation"> {{ reclamation.titre }} </td>
+              </ng-container>
+  
+              <ng-container matColumnDef="description">
+                <th mat-header-cell *matHeaderCellDef> description </th>
+                <td mat-cell *matCellDef="let reclamation"> {{ reclamation.description  }} </td>
+              </ng-container>
+  
+              <ng-container matColumnDef="statut">
+                <th mat-header-cell *matHeaderCellDef> statut </th>
+                <td mat-cell *matCellDef="let reclamation"> {{ reclamation.statut  }} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="dateModification">
+                <th mat-header-cell *matHeaderCellDef> Date Modifie </th>
+                <td mat-cell *matCellDef="let reclamation"> {{ reclamation.dateModification | date: 'dd-MM-yyyy' }} </td>
+              </ng-container>
+  
+              <ng-container matColumnDef="dateCreation">
+                <th mat-header-cell *matHeaderCellDef> Date Ajoute </th>
+                <td mat-cell *matCellDef="let reclamation"> {{ reclamation.dateCreation  | date: 'dd-MM-yyyy' }} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef> Actions </th>
+                <td mat-cell *matCellDef="let reclamation">
+                  <button mat-icon-button *ngIf="this.userAct.role=='MANAGER' && reclamation.statut!= 'TERMINEE'" class="btn-Succes" (click)="acceptreclamation(reclamation.id)">
+                    <mat-icon>Accept</mat-icon>
+                  </button>
+                  <button mat-icon-button class="btn-Update" (click)="editreclamation(reclamation)">
+                    <mat-icon>Modifier</mat-icon>
+                  </button>
+                  <button mat-icon-button class="btn-Delete" (click)="deletereclamation(reclamation.id)">
+                    <mat-icon>Supprimer</mat-icon>
+                  </button>
+                </td>
+              </ng-container>
+  
+              <!-- Table rows -->
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,53 @@
+<div style="min-height: 600px; background-image: url(assets/img/theme/taxi.png); background-size: cover; background-position: center top;">
+  <!-- Mask -->
+  <span class="mask bg-gradient-gray-7"></span>
+  <!-- Header container -->
+  <div class="container-fluid d-flex align-items-center">
+    <div class="row">
+      <i class="fa-solid fa-user"></i>
+
+    </div>
+  </div>
+
+</div>
+
+
+<div class="container-fluid mt--7">
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+      <div class="card card-user">
+        <div class="card-header">
+          <h2 class="card-title mb-0">{{titlePage}}</h2>
+        </div>
+      </div>
+
+      <div class="card card-user">
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label for="auteur">Nom du groupe</label>
+              <input matInput type="text" class="form-control" id="auteur" [(ngModel)]="auteur">
+            </div>
+            <mat-form-field class="form-group">
+              <label>Members</label>
+              <mat-select class="form-control select" [formControl]="selectedMembers" multiple>
+                <mat-option *ngFor="let user of users" [value]="user">{{ user.firstname }} {{ user.lastname }}</mat-option>
+              </mat-select>
+              <mat-error *ngIf="selectedMembers.invalid && selectedMembers.errors.required">
+                Les membres sont obligatoires.
+              </mat-error>
+            </mat-form-field>
+            <div class="form-group">
+              <label for="groupeAEcrire">Description groupe</label>
+              <input matInput type="text" class="form-control" id="groupeAEcrire" [(ngModel)]="groupeAEcrire">
+            </div>
+            <button (click)="ajouterGroupe()" class="btn btn-primary">{{titleButton}}</button>
+            <button type="button" (click)="returnGroupe()" class="btn btn-primary btn-round">retour a la liste du groupe</button>
+          </form>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>

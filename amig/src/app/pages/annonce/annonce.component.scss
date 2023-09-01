@@ -1,0 +1,74 @@
+.mask {
+  background: linear-gradient(to bottom, #767575, #aaa8a8);
+  opacity: 0.4;
+}
+
+
+
+.header {
+  background-image: linear-gradient(to right, #029FA0, #EC6D0F);
+  padding-bottom: 8rem;
+  padding-top: 5rem;
+  padding-top: 8rem;
+}
+
+.card-header {
+  background-color: #029FA0;
+  color: white;
+  padding: 1.5rem;
+}
+
+.card-body {
+  background-color: #F5F5F5;
+  padding: 2rem;
+  border: 5px solid #EC6D0F;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #EC6D0F;
+}
+
+.form-group label {
+  color: #029FA0;
+}
+
+.btn-primary {
+  background-color: #029FA0;
+  border-color: #029FA0;
+}
+
+.btn-primary:hover {
+  background-color: #EC6D0F;
+  border-color: #EC6D0F;
+}
+
+.btn-round {
+  border-radius: 25px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+select,
+textarea {
+  background-color: #F5F5F5;
+  border: 5px solid #029FA0;
+  border-radius: 5px;
+  color: #029FA0;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+input[type="file"] {
+  margin-top: 1rem;
+}
+
+img,
+video {
+  border: 1px solid #029FA0;
+  border-radius: 5px;
+  display: block;
+  margin-bottom: 1rem;
+  max-width: 100%;
+}
